@@ -1,7 +1,9 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Net.Http.Headers;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Http;
 using Quotely.Code.Handlers;
 using Quotely.Code.Services;
 
@@ -23,6 +25,7 @@ namespace Quotely.Code
                             client.DefaultRequestHeaders.Accept.Clear();
                             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                         });
+                        services.RemoveAll<IHttpMessageHandlerBuilderFilter>();
                         services.AddTransient<IArgHandler, ArgHandler>();
                         services.AddTransient<IQuoteService, QuoteService>();
                     })
