@@ -3,7 +3,9 @@
 
 ## Prerequisites
 
-1. [Install .NET SDK](https://dotnet.microsoft.com/en-us/download)
+1. [Install .NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+
+2. (Optional) Install `dotnet` command with brew: `brew install dotnet` (Automatically resolves PATH)
 
 ## Steps To Run Project
 
@@ -21,4 +23,8 @@
 
 4. Run the program
 
-`./Quotely.Code/bin/Debug/net6.0/Quotely.Code <ARGUMENT>`
+`./Quotely.Code/bin/Debug/net6.0/Quotely.Code [Russian|English]`
+
+5. Run the Unit Test
+
+`dotnet test` Or `dotnet test -v d`
